@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities
 {
-    internal class User
+    public class User
     {
     }
 }
