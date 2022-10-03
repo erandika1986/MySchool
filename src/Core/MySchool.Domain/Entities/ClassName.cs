@@ -9,6 +9,13 @@ namespace MySchool.Domain.Entities
 {
     public class ClassName : BaseAuditEntity
     {
+        public ClassName()
+        {
+            Classes = new HashSet<Class>();
+        }
+
         public string Name { get; set; }
+
+        public virtual ICollection<Class> Classes { get; set; }
     }
 }

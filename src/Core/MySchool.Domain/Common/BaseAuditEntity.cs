@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySchool.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,8 @@ namespace MySchool.Domain.Common
         public DateTime? UpdateDate { get; set; }
         public int? UpdatedByUserId { get; set; }
         public bool IsActive { get; set; }
+
+        public virtual User CreatedByUser { get; set; }
+        public virtual User UpdatedByUser { get; set; }
     }
 }

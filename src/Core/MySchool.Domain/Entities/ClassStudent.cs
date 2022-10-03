@@ -11,5 +11,8 @@ namespace MySchool.Domain.Entities
     {
         public int StudentId { get; set; }
         public int ClassId { get; set; }
+
+        public virtual Class Class { get; set; }
+        public virtual User Student { get; set; }
     }
 }
