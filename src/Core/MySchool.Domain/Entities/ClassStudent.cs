@@ -9,10 +9,15 @@ namespace MySchool.Domain.Entities
 {
     public class ClassStudent : BaseAuditEntity
     {
+        public ClassStudent()
+        {
+            ClassStudentSubjectss = new HashSet<ClassStudentSubjects>();
+        }
         public int StudentId { get; set; }
         public int ClassId { get; set; }
 
         public virtual Class Class { get; set; }
         public virtual User Student { get; set; }
+        public virtual ICollection<ClassStudentSubjects> ClassStudentSubjectss { get; set; }
     }
 }

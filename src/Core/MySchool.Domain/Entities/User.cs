@@ -13,8 +13,11 @@ namespace MySchool.Domain.Entities
         public User()
         {
             ClassStudents = new HashSet<ClassStudent>();
+            ClassStudentAttendances = new HashSet<ClassStudentAttendance>();
             CreatedByUsers = new HashSet<User>();
             UpdateByUsers = new HashSet<User>();
+            ClassStudentSubjectAttendances = new HashSet<ClassStudentSubjectAttendance>();
+            ClassSubjectAttendances = new HashSet<ClassSubjectAttendance>();
         }
 
         public string UserName { get; set; }
@@ -30,6 +33,9 @@ namespace MySchool.Domain.Entities
 
         public virtual ICollection<User> CreatedByUsers { get; set; }
         public virtual ICollection<User> UpdateByUsers { get; set; }
+        public virtual ICollection<ClassStudentSubjectAttendance> ClassStudentSubjectAttendances { get; set; }
+        public virtual ICollection<ClassSubjectAttendance> ClassSubjectAttendances { get; set; }
+
 
     }
 }

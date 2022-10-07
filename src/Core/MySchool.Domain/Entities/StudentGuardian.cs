@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities
 {
-    public class StudentGuardian : BaseAuditEntity
+    public class StudentGuardian : BaseAuditEntity   //???????????????
     {
-        public int UserId { get; set; }
+        public int UserId { get; set; }   // ???
         public int StudentId { get; set; }
+        public string Name { get; set; }
         public string Relationship { get; set; }
+
+        public virtual User Guardian { get; set; }
+        public virtual User Student { get; set; }
+
     }
 }

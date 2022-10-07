@@ -15,7 +15,7 @@ namespace MySchool.Infrastructure.Data.Configurations
         {
             builder.ToTable("Role");
             builder.HasKey(x => x.Id);  
-            //builder.HasKey(x => new { x.Id, x. });
+            //builder.HasKey(x => new { x.Id, x. }); if composit keys available
         }
     }
 }

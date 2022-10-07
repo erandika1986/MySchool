@@ -12,6 +12,9 @@ namespace MySchool.Domain.Entities
         public Class()
         {
             ClassStudents = new HashSet<ClassStudent>();
+            ClassAttendances = new HashSet<ClassAttendance>();
+            ClassSubjects = new HashSet<ClassSubject>();
+            ClassSubjectAttendances = new HashSet<ClassSubjectAttendance>();
         }
 
         public int AcademicYearId { get; set; }
@@ -23,7 +26,10 @@ namespace MySchool.Domain.Entities
         public virtual Grade Grade { get; set; }
         public virtual ClassName ClassName { get; set; }
 
-        public ICollection<ClassStudent> ClassStudents { get; set; }
+        public virtual ICollection<ClassStudent> ClassStudents { get; set; }
+        public virtual ICollection<ClassAttendance> ClassAttendances { get; set; }
+        public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
+        public virtual ICollection<ClassSubjectAttendance> ClassSubjectAttendances { get; set; }
 
 
     }
