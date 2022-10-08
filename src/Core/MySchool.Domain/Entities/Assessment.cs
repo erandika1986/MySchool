@@ -9,7 +9,12 @@ namespace MySchool.Domain.Entities
 {
     public class Assessment : BaseAuditEntity
     {
-
+        public Assessment()
+        {
+            AssessmentClassStudentSubjectScores = new HashSet<AssessmentClassStudentSubjectScore>();
+        }
         public string Name { get; set; }
+
+        public virtual ICollection<AssessmentClassStudentSubjectScore> AssessmentClassStudentSubjectScores { get; set; }
     }
 }

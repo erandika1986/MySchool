@@ -9,6 +9,11 @@ namespace MySchool.Domain.Entities
 {
     public class Subjects : BaseAuditEntity
     {
+        public Subjects()
+        {
+            ClassSubjects = new HashSet<ClassSubject>();
+            ClassSubjectAttendances = new HashSet<ClassSubjectAttendance>();
+        }
         public int ParentBasketSubjectId { get; set; }
         public int DepartmentHeadId { get; set; }
         public string Name { get; set; }
@@ -16,6 +21,7 @@ namespace MySchool.Domain.Entities
         public bool IsParentBasketSubject { get; set; }
         public bool IsBasketSubject { get; set; }
 
-
+        public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
+        public virtual ICollection<ClassSubjectAttendance> ClassSubjectAttendances { get; set; }
     }
 }

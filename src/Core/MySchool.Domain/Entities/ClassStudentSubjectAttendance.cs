@@ -13,5 +13,8 @@ namespace MySchool.Domain.Entities
         public int StudentId { get; set; }
         public bool IsPresent { get; set; }
 
+        public virtual ClassSubjectAttendance ClassSubjectAttendance { get; set; }
+        public virtual User Student { get; set; }
+
     }
 }
