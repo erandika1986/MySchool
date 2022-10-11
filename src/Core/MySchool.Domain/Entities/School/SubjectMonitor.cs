@@ -5,19 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Domain.Entities
+namespace MySchool.Domain.Entities.School
 {
-    public class Grade : BaseAuditEntity
+    public class SubjectMonitor : BaseAuditEntity //??????????
     {
-        public Grade()
+        public SubjectMonitor()
         {
-            Classes = new HashSet<Class>();
             ClassSubjects = new HashSet<ClassSubject>();
         }
-
-        public string Name { get; set; }
-
-        public virtual ICollection<Class> Classes { get; set; }
+        public int MonitorId { get; set; }
+        public int SubjectId { get; set; }
         public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
     }
 }

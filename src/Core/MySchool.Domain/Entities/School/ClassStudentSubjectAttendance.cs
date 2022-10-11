@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Domain.Entities
+namespace MySchool.Domain.Entities.School
 {
     public class ClassStudentSubjectAttendance : BaseAuditEntity
     {

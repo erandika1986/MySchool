@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Infrastructure.Data.Configurations
+namespace MySchool.Infrastructure.Data.Configurations.School
 {
     internal class UserConfigurations
     {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities
 {
-    public class ClassStudentSubjects : BaseAuditEntity
+    public class ClassStudentSubject : BaseAuditEntity
     {
-        public ClassStudentSubjects()
+        public ClassStudentSubject()
         {
             AssessmentClassStudentSubjectScores = new HashSet<AssessmentClassStudentSubjectScore>();
         }

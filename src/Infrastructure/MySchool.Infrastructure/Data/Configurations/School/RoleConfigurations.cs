@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Infrastructure.Data.Configurations
+namespace MySchool.Infrastructure.Data.Configurations.School
 {
     public class RoleConfigurations : IEntityTypeConfiguration<Role>
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Role");
-            builder.HasKey(x => x.Id);  
+            builder.HasKey(x => x.Id);
         }
     }
 }
