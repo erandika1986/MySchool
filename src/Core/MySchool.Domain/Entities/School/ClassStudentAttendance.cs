@@ -1,4 +1,5 @@
 ﻿using MySchool.Domain.Common;
+using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
