@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Domain.Entities
+namespace MySchool.Domain.Entities.School
 {
-    public class UserRole : BaseAuditEntity
+    public class Role : BaseEntity
     {
-        public int UserId { get; set; }
-        public int RoleId { get; set; }
+        public string Name { get; set; }
     }
 }

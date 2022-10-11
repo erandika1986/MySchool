@@ -1,4 +1,5 @@
 ﻿using MySchool.Domain.Common;
+using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities
 {
-    public class ClassStudentSubjectAttendance : BaseAuditEntity
+    public class ClassStudentAttendance : BaseAuditEntity
     {
-        public int ClassSubjectAttendanceId { get; set; }
         public int StudentId { get; set; }
+        public int ClassAttendanceId { get; set; }
         public bool IsPresent { get; set; }
 
-        public virtual ClassSubjectAttendance ClassSubjectAttendance { get; set; }
-        public virtual User Student { get; set; }
 
+        public virtual User Student { get; set; }
+        public virtual ClassAttendance ClassAttendance { get; set; }
     }
 }

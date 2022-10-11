@@ -1,4 +1,5 @@
 ﻿using MySchool.Domain.Common;
+using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities
 {
-    public class ClassStudentSubjects : BaseAuditEntity
+    public class ClassStudentSubject : BaseAuditEntity
     {
-        public ClassStudentSubjects()
+        public ClassStudentSubject()
         {
             AssessmentClassStudentSubjectScores = new HashSet<AssessmentClassStudentSubjectScore>();
         }

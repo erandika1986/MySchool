@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Domain.Entities
+namespace MySchool.Domain.Entities.School
 {
-    public class Subjects : BaseAuditEntity
+    public class Subject : BaseAuditEntity
     {
-        public Subjects()
+        public Subject()
         {
             ClassSubjects = new HashSet<ClassSubject>();
             ClassSubjectAttendances = new HashSet<ClassSubjectAttendance>();

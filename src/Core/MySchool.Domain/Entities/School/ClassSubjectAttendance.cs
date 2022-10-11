@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Domain.Entities
+namespace MySchool.Domain.Entities.School
 {
     public class ClassSubjectAttendance : BaseAuditEntity
     {
@@ -20,7 +20,7 @@ namespace MySchool.Domain.Entities
 
 
         public virtual Class Class { get; set; }
-        public virtual Subjects Subjects { get; set; }
+        public virtual Subject Subjects { get; set; }
         public virtual User Teacher { get; set; }
 
         public virtual ICollection<ClassStudentSubjectAttendance> ClassStudentSubjectAttendances { get; set; }

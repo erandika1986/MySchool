@@ -1,4 +1,5 @@
 ﻿using MySchool.Domain.Common;
+using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,13 @@ namespace MySchool.Domain.Entities
     {
         public ClassStudent()
         {
-            ClassStudentSubjectss = new HashSet<ClassStudentSubjects>();
+            ClassStudentSubjectss = new HashSet<ClassStudentSubject>();
         }
         public int StudentId { get; set; }
         public int ClassId { get; set; }
 
         public virtual Class Class { get; set; }
         public virtual User Student { get; set; }
-        public virtual ICollection<ClassStudentSubjects> ClassStudentSubjectss { get; set; }
+        public virtual ICollection<ClassStudentSubject> ClassStudentSubjectss { get; set; }
     }
 }
