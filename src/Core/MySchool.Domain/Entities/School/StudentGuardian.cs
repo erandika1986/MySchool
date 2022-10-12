@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities.School
 {
-    public class StudentGuardian : BaseAuditEntity   //???????????????
+    public class StudentGuardian : BaseAuditEntity   
     {
         public int UserId { get; set; }   // ???
         public int StudentId { get; set; }

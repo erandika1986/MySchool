@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Infrastructure.Data.Configurations
+namespace MySchool.Infrastructure.Data.Configurations.School
 {
     public class ClassSubjectConfigurations : IEntityTypeConfiguration<ClassSubjectConfigurations>
     {
@@ -14,7 +14,7 @@ namespace MySchool.Infrastructure.Data.Configurations
         {
             builder.ToTable("ClassSubject");
             //builder.HasKey(x => x.Id);
-            builder.HasKey(x => new { x.Id, x.ClassId, x.SubjectId, X.GradeId, x.SubjectTeacherId,x.SubjectMonitorId }); //if composit keys available
+            builder.HasKey(x => new { x.Id, x.ClassId, x.SubjectId, X.GradeId, x.SubjectTeacherId, x.SubjectMonitorId }); //if composit keys available
         }
     }
 }
