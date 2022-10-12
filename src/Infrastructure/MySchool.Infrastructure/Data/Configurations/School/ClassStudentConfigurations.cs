@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySchool.Infrastructure.Data.Configurations
+namespace MySchool.Infrastructure.Data.Configurations.School
 {
     public class ClassStudentConfigurations : IEntityTypeConfiguration<ClassStudentConfigurations>
     {
