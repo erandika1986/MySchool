@@ -14,8 +14,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<AssessmentClassStudentSubjectScore> builder)
         {
             builder.ToTable("AssessmentClassStudentSubjectScore");
-            //builder.HasKey(x => x.Id);
-            builder.HasKey(x => x.Id ); //if composit keys available
+            builder.HasKey(x => x.Id);
         }
     }
 }

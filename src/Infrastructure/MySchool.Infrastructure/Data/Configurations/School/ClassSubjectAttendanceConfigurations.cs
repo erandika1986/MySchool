@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace MySchool.Infrastructure.Data.Configurations.School
 {
-    public class ClassSubjectAttendanceConfigurations : IEntityTypeConfiguration<ClassSubjectAttendanceConfigurations>
+    public class ClassSubjectAttendanceConfigurations : IEntityTypeConfiguration<ClassSubjectAttendance>
     {
-        public void Configure(EntityTypeBuilder<ClassSubjectAttendanceConfigurations> builder)
+        public void Configure(EntityTypeBuilder<ClassSubjectAttendance> builder)
         {
-            builder.ToTable("ClassSubjectAttendances");
-            //builder.HasKey(x => x.Id);
-            builder.HasKey(x => new { x.Id, x.ClassId, x.SubjectId, X.TeacherId }); //if composit keys available
+            builder.ToTable("ClassSubjectAttendance");
+            builder.HasKey(x => x.Id);
         }
     }
 }
