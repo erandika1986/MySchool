@@ -15,13 +15,9 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         {
             builder.ToTable("GradeSubject");
 
-         /*   builder.HasOne<Grade>(s => s.Grade)
-                .WithMany(x => x.GradeSubjects)
-                .HasForeignKey(x => x.GradeId);
-
             builder.HasOne<Grade>(s => s.Grade)
                 .WithMany(x => x.GradeSubjects)
-                .HasForeignKey(x => x.GradeId); */
+                .HasForeignKey(x => x.GradeId);
       
         }
     }

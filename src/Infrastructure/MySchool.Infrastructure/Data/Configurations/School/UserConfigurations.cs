@@ -14,8 +14,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
-            builder.HasKey(x => x.Id);  
-            //builder.HasKey(x => new { x.Id, x. }); if composit keys available
+            builder.HasKey(x => x.Id);
         }
     }
 }

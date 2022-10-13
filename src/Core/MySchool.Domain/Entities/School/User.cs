@@ -19,6 +19,7 @@ namespace MySchool.Domain.Entities.School
             ClassStudentSubjectAttendances = new HashSet<ClassStudentSubjectAttendance>();
             ClassSubjectAttendances = new HashSet<ClassSubjectAttendance>();
             StudentGuardians = new HashSet<StudentGuardian>();
+            UserRoles = new HashSet<UserRole>();
         }
 
         public string UserName { get; set; }
@@ -37,6 +38,7 @@ namespace MySchool.Domain.Entities.School
         public virtual ICollection<ClassStudentSubjectAttendance> ClassStudentSubjectAttendances { get; set; }
         public virtual ICollection<ClassSubjectAttendance> ClassSubjectAttendances { get; set; }
         public virtual ICollection<StudentGuardian> StudentGuardians { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
 
 
     }

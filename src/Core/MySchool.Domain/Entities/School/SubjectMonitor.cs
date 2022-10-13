@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities.School
 {
-    public class SubjectMonitor : BaseAuditEntity //??????????
+    public class SubjectMonitor : BaseAuditEntity 
     {
         public SubjectMonitor()
         {

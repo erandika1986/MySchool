@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MySchool.Domain.Entities;
 using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,14 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<StudentGuardian> builder)
         {
             builder.ToTable("StudentGuardian");
-            //builder.HasKey(x => x.Id);
-            //builder.HasKey(x => new { x.Id, X.StudentId }); //if composit keys available
+
+       /*     builder.HasOne<User>(s => s.Guardian)
+                .WithMany(x => x.StudentGuardian)
+                .HasForeignKey(x => x.UserId);
+
+            builder.HasOne<ClassStudent>(s => s.Student)
+                .WithMany(x => x.StudentGuardian)
+                .HasForeignKey(x => x.StudentId);   */
         }
     }
 }

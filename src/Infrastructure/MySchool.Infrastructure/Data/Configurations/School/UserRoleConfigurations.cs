@@ -13,9 +13,14 @@ namespace MySchool.Infrastructure.Data.Configurations.School
     {
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
-            builder.ToTable("User");
-            builder.HasKey(x => x.Id);
-            //builder.HasKey(x => new { x.Id, x. }); if composit keys available
+            builder.ToTable("UserRole");
+          /*  builder.HasOne<User>(s => s.User)
+               .WithMany(x => x.UserRole)
+               .HasForeignKey(x => x.UserId);
+
+             builder.HasOne<Role>(s => s.Role)
+              .WithMany(x => x.UserRole)
+              .HasForeignKey(x => x.RoleId);  */
         }
     }
 }
