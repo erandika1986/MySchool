@@ -11,7 +11,6 @@ namespace MySchool.Domain.Entities.School
     {
         public int UserId { get; set; }   // ???
         public int StudentId { get; set; }
-        public string Name { get; set; }
         public string Relationship { get; set; }
 
         public virtual User Guardian { get; set; }

@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace MySchool.Infrastructure.Data.Configurations.School
 {
-    public class AcademicYearConfigurations : IEntityTypeConfiguration<AcademicYear>
+    public class AssessmentConfigurations : IEntityTypeConfiguration<Assessment>
     {
-        public void Configure(EntityTypeBuilder<AcademicYear> builder)
+        public void Configure(EntityTypeBuilder<Assessment> builder)
         {
-            builder.ToTable("AcademicYear");
-            builder.HasKey(x => x.Id);
-        }
+            builder.ToTable("Assessment");
+            builder.HasKey(x => x.Id);       }
     }
 }
