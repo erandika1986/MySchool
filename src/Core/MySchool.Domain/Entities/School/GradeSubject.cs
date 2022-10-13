@@ -9,7 +9,10 @@ namespace MySchool.Domain.Entities.School
 {
     public class GradeSubject : BaseAuditEntity
     {
+        public int GradeId { get; set; }
         public string Subject { get; set; }
+
+        public virtual Grade Grade { get; set; }
 
     }
 }
