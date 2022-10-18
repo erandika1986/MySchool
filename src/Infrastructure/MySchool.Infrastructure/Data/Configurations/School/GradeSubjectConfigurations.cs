@@ -18,7 +18,21 @@ namespace MySchool.Infrastructure.Data.Configurations.School
             builder.HasOne<Grade>(s => s.Grade)
                 .WithMany(x => x.GradeSubjects)
                 .HasForeignKey(x => x.GradeId);
-      
+
+            builder
+                .HasOne<User>(a => a.CreatedByUser)
+                .WithMany(r => r.CreatedGradeSubjects)
+                .HasForeignKey(a => a.CreatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
+
+            builder
+                .HasOne<User>(a => a.UpdatedByUser)
+                .WithMany(r => r.UpdatedGradeSubjects)
+                .HasForeignKey(a => a.UpdatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
+
         }
     }
 }

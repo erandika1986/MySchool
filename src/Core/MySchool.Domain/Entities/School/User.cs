@@ -16,8 +16,8 @@ namespace MySchool.Domain.Entities.School
             ClassStudents = new HashSet<ClassStudent>();
             ClassStudentAttendances = new HashSet<ClassStudentAttendance>();
 
-            CreatedByUsers = new HashSet<User>();
-            UpdateByUsers = new HashSet<User>();
+            CreatedUsers = new HashSet<User>();
+            UpdateUsers = new HashSet<User>();
 
             CreatedAcademicYears = new HashSet<AcademicYear>();
             UpdatedAcademicYears= new HashSet<AcademicYear>();
@@ -93,8 +93,8 @@ namespace MySchool.Domain.Entities.School
         public virtual ICollection<ClassStudent> ClassStudents { get; set; }
         public virtual ICollection<ClassStudentAttendance> ClassStudentAttendances { get; set; }
 
-        public virtual ICollection<User> CreatedByUsers { get; set; }
-        public virtual ICollection<User> UpdateByUsers { get; set; }
+        public virtual ICollection<User> CreatedUsers { get; set; }
+        public virtual ICollection<User> UpdateUsers { get; set; }
 
         public virtual ICollection<AcademicYear> CreatedAcademicYears { get; set; }
         public virtual ICollection<AcademicYear> UpdatedAcademicYears { get; set; }
