@@ -44,7 +44,6 @@ namespace MySchool.Infrastructure.Data
         {
             var tenant = _tenantProvider.GetTenant();
             optionsBuilder.UseSqlServer(tenant.DatabaseConnectionString);
-
             base.OnConfiguring(optionsBuilder);
         }
 
