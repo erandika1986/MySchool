@@ -16,6 +16,21 @@ namespace MySchool.Infrastructure.Data.Configurations.School
             builder.ToTable("SubjectMonitor");
             //builder.HasKey(x => x.Id);
             //builder.HasKey(x => new { x.Id, X.SubjectId, x.MonitorId }); //if composit keys available
+
+
+            builder
+                .HasOne<User>(a => a.CreatedByUser)
+                .WithMany(r => r.CreatedSubjectMonitors)
+                .HasForeignKey(a => a.CreatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
+
+            builder
+                .HasOne<User>(a => a.UpdatedByUser)
+                .WithMany(r => r.UpdatedSubjectMonitors)
+                .HasForeignKey(a => a.UpdatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
         }
     }
 }

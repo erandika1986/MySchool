@@ -16,6 +16,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         {
             builder.ToTable("Role");
             builder.HasKey(x => x.Id);
+
         }
     }
 }
