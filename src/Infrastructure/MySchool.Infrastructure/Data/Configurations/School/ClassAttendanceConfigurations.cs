@@ -15,6 +15,20 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         {
             builder.ToTable("ClassAttendance");
             builder.HasKey(x => x.Id);
+
+            builder
+                .HasOne<User>(a => a.CreatedByUser)
+                .WithMany(r => r.CreatedClassAttendances)
+                .HasForeignKey(a => a.CreatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
+
+            builder
+                .HasOne<User>(a => a.UpdatedByUser)
+                .WithMany(r => r.UpdatedClassAttendances)
+                .HasForeignKey(a => a.UpdatedByUserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
         }
     }
 }
