@@ -14,14 +14,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<SubjectTeacher> builder)
         {
             builder.ToTable("SubjectTeachers");
-
-            /*     builder.HasOne<Subject>(s => s.Subject)
-                  .WithMany(x => x.SubjectTeachers)
-                  .HasForeignKey(x => x.SubjectId);
-
-                 builder.HasOne<User>(s => s.Teacher)
-                     .WithMany(x => x.SubjectTeachers)
-                     .HasForeignKey(x => x.TeacherId); */
+            builder.HasKey(x => x.Id);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

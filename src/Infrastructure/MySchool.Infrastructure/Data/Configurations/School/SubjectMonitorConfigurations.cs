@@ -14,9 +14,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<SubjectMonitor> builder)
         {
             builder.ToTable("SubjectMonitor");
-            //builder.HasKey(x => x.Id);
-            //builder.HasKey(x => new { x.Id, X.SubjectId, x.MonitorId }); //if composit keys available
-
+            builder.HasKey(x => x.Id);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

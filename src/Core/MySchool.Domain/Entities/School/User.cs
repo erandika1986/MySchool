@@ -80,6 +80,9 @@ namespace MySchool.Domain.Entities.School
             CreatedUserRoles = new HashSet<UserRole>();
             UpdatedUserRoles = new HashSet<UserRole>(); 
             UserRoles = new HashSet<UserRole>();
+
+            CreatedRoles = new HashSet<Role>();
+            UpdatedRoles = new HashSet<Role>();
         }
 
         public string UserName { get; set; }
@@ -156,5 +159,8 @@ namespace MySchool.Domain.Entities.School
         public virtual ICollection<UserRole> CreatedUserRoles { get; set; }
         public virtual ICollection<UserRole> UpdatedUserRoles { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
+
+        public virtual ICollection<Role> CreatedRoles { get; set; }
+        public virtual ICollection<Role> UpdatedRoles { get; set; }
     }
 }
