@@ -14,7 +14,22 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<Subject> builder)
         {
             builder.ToTable("Subject");
+
             builder.HasKey(x => x.Id);
+
+            builder
+                .HasOne<Subject>(a => a.ParentBasketSubject)
+                .WithMany(r => r.Subjects)
+                .HasForeignKey(a => a.ParentBasketSubjectId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
+
+            builder
+                .HasOne<User>(a => a.DepartmentHead)
+                .WithMany(r => r.Subjects)
+                .HasForeignKey(a => a.DepartmentHeadId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

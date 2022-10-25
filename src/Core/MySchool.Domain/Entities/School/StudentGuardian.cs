@@ -9,7 +9,7 @@ namespace MySchool.Domain.Entities.School
 {
     public class StudentGuardian : BaseAuditEntity   
     {
-        public int UserId { get; set; }   // ???
+        public int UserId { get; set; }
         public int StudentId { get; set; }
         public string Relationship { get; set; }
 

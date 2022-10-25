@@ -15,13 +15,19 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         {
             builder.ToTable("SubjectTeachers");
 
-            /*     builder.HasOne<Subject>(s => s.Subject)
-                  .WithMany(x => x.SubjectTeachers)
-                  .HasForeignKey(x => x.SubjectId);
+            builder
+                .HasOne<User>(a => a.Teacher)
+                .WithMany(r => r.SubjectTeachers)
+                .HasForeignKey(a => a.TeacherId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
-                 builder.HasOne<User>(s => s.Teacher)
-                     .WithMany(x => x.SubjectTeachers)
-                     .HasForeignKey(x => x.TeacherId); */
+            builder
+                .HasOne<Subject>(a => a.Subject)
+                .WithMany(r => r.SubjectTeachers)
+                .HasForeignKey(a => a.SubjectId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

@@ -66,8 +66,10 @@ namespace MySchool.Domain.Entities.School
 
             CreatedStudentGuardians = new HashSet<StudentGuardian>();
             UpdatedStudentGuardians = new HashSet<StudentGuardian>();
-            StudentGuardians = new HashSet<StudentGuardian>();
+            Guardians = new HashSet<StudentGuardian>();
+            Students = new HashSet<StudentGuardian>();
 
+            Subjects = new HashSet<Subject>();
             CreatedSubjects = new HashSet<Subject>();
             UpdatedSubjects = new HashSet<Subject>();
 
@@ -141,11 +143,15 @@ namespace MySchool.Domain.Entities.School
 
         public virtual ICollection<StudentGuardian> CreatedStudentGuardians { get; set; }
         public virtual ICollection<StudentGuardian> UpdatedStudentGuardians { get; set; }
-        public virtual ICollection<StudentGuardian> StudentGuardians { get; set; }
+        public virtual ICollection<StudentGuardian> Guardians { get; set; }
+        public virtual ICollection<StudentGuardian> Students { get; set; }
 
+
+        public virtual ICollection<Subject> Subjects { get; set; }
         public virtual ICollection<Subject> CreatedSubjects { get; set; }
         public virtual ICollection<Subject> UpdatedSubjects { get; set; }
 
+        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
         public virtual ICollection<SubjectTeacher> CreatedSubjectTeachers { get; set; }
         public virtual ICollection<SubjectTeacher> UpdatedSubjectTeachers { get; set; }
 
