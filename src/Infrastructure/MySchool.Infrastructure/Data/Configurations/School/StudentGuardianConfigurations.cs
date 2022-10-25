@@ -16,13 +16,19 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         {
             builder.ToTable("StudentGuardian");
 
-            /*     builder.HasOne<User>(s => s.Guardian)
-                     .WithMany(x => x.StudentGuardian)
-                     .HasForeignKey(x => x.UserId);
+            builder
+                .HasOne<User>(a => a.Guardian)
+                .WithMany(r => r.Guardians)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
-                 builder.HasOne<ClassStudent>(s => s.Student)
-                     .WithMany(x => x.StudentGuardian)
-                     .HasForeignKey(x => x.StudentId);   */
+            builder
+                .HasOne<User>(a => a.Student)
+                .WithMany(r => r.Students)
+                .HasForeignKey(a => a.StudentId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

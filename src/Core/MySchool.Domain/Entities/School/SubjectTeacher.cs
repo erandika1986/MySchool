@@ -15,6 +15,10 @@ namespace MySchool.Domain.Entities.School
         }
         public int TeacherId { get; set; }
         public int SubjectId { get; set; }
+
+        public virtual User Teacher { get; set; }
+        public virtual Subject Subject { get; set; }
+
         public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
     }
 }

@@ -36,7 +36,6 @@ namespace MySchool.Infrastructure.Data
         public DbSet<GradeSubject> GradeSubjects => Set<GradeSubject>();
         public DbSet<StudentGuardian> StudentGuardians => Set<StudentGuardian>();
         public DbSet<Subject> Subjects => Set<Subject>();
-        public DbSet<SubjectMonitor> SubjectMonitors => Set<SubjectMonitor>();
         public DbSet<SubjectTeacher> SubjectTeachers => Set<SubjectTeacher>();
 
 
@@ -44,7 +43,6 @@ namespace MySchool.Infrastructure.Data
         {
             var tenant = _tenantProvider.GetTenant();
             optionsBuilder.UseSqlServer(tenant.DatabaseConnectionString);
-
             base.OnConfiguring(optionsBuilder);
         }
 

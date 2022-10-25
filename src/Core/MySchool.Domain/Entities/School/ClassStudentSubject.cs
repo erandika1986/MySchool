@@ -19,6 +19,8 @@ namespace MySchool.Domain.Entities
 
         public virtual ClassSubject ClassSubject { get; set; }
         public virtual ClassStudent ClassStudent { get; set; }
+
+        public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
         public virtual ICollection<AssessmentClassStudentSubjectScore> AssessmentClassStudentSubjectScores { get; set; }
 
     }

@@ -12,13 +12,13 @@ namespace MySchool.Domain.Entities
     {
         public ClassStudent()
         {
-            ClassStudentSubjectss = new HashSet<ClassStudentSubject>();
+            ClassStudentSubjects = new HashSet<ClassStudentSubject>();
         }
         public int StudentId { get; set; }
         public int ClassId { get; set; }
 
         public virtual Class Class { get; set; }
         public virtual User Student { get; set; }
-        public virtual ICollection<ClassStudentSubject> ClassStudentSubjectss { get; set; }
+        public virtual ICollection<ClassStudentSubject> ClassStudentSubjects { get; set; }
     }
 }

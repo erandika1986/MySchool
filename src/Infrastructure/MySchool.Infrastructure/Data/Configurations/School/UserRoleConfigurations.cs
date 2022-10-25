@@ -14,13 +14,23 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
             builder.ToTable("UserRole");
-          /*  builder.HasOne<User>(s => s.User)
-               .WithMany(x => x.UserRole)
-               .HasForeignKey(x => x.UserId);
 
-             builder.HasOne<Role>(s => s.Role)
-              .WithMany(x => x.UserRole)
-              .HasForeignKey(x => x.RoleId);  */
+            builder.HasKey(k => new { k.UserId, k.RoleId });
+
+            builder
+                .HasOne<User>(a => a.User)
+                .WithMany(r => r.UserRoles)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder
+                .HasOne<Role>(a => a.Role)
+                .WithMany(r => r.UserRoles)
+                .HasForeignKey(a => a.RoleId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
         }
     }
 }

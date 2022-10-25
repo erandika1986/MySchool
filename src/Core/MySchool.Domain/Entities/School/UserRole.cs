@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySchool.Domain.Entities.School
 {
-    public class UserRole : BaseAuditEntity
+    public class UserRole
     {
         public int UserId { get; set; }
         public int RoleId { get; set; }

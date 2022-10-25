@@ -53,9 +53,5 @@ namespace MySchool.Infrastructure.Data
 
             return tenant.Id;
         }
-
-
-
-
     }
 }
