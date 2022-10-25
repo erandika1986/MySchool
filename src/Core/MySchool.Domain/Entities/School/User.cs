@@ -33,6 +33,7 @@ namespace MySchool.Domain.Entities.School
 
             CreatedClassAttendances = new HashSet<ClassAttendance>();
             UpdatedClassAttendances = new HashSet<ClassAttendance>();
+            ClassAttendances = new HashSet<ClassAttendance>();
 
             CreatedClassNames = new HashSet<ClassName>();
             UpdatedClassNames = new HashSet<ClassName>();
@@ -69,9 +70,6 @@ namespace MySchool.Domain.Entities.School
 
             CreatedSubjects = new HashSet<Subject>();
             UpdatedSubjects = new HashSet<Subject>();
-
-            CreatedSubjectMonitors = new HashSet<SubjectMonitor>();
-            UpdatedSubjectMonitors = new HashSet<SubjectMonitor>();
 
             CreatedSubjectTeachers = new HashSet<SubjectTeacher>(); 
             UpdatedSubjectTeachers = new HashSet<SubjectTeacher>();
@@ -110,6 +108,7 @@ namespace MySchool.Domain.Entities.School
 
         public virtual ICollection<ClassAttendance> CreatedClassAttendances { get; set; }
         public virtual ICollection<ClassAttendance> UpdatedClassAttendances { get; set; }
+        public virtual ICollection<ClassAttendance> ClassAttendances { get; set; }
 
         public virtual ICollection<ClassName> CreatedClassNames { get; set; }
         public virtual ICollection<ClassName> UpdatedClassNames { get; set; }
@@ -146,9 +145,6 @@ namespace MySchool.Domain.Entities.School
 
         public virtual ICollection<Subject> CreatedSubjects { get; set; }
         public virtual ICollection<Subject> UpdatedSubjects { get; set; }
-
-        public virtual ICollection<SubjectMonitor> CreatedSubjectMonitors { get; set; }
-        public virtual ICollection<SubjectMonitor> UpdatedSubjectMonitors { get; set; }
 
         public virtual ICollection<SubjectTeacher> CreatedSubjectTeachers { get; set; }
         public virtual ICollection<SubjectTeacher> UpdatedSubjectTeachers { get; set; }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MySchool.Domain.Entities;
 using MySchool.Domain.Entities.School;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,29 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<ClassSubjectAttendance> builder)
         {
             builder.ToTable("ClassSubjectAttendance");
+
             builder.HasKey(x => x.Id);
+
+            builder
+                .HasOne<Class>(a => a.Class)
+                .WithMany(r => r.ClassSubjectAttendances)
+                .HasForeignKey(a => a.ClassId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder
+                .HasOne<Subject>(a => a.Subjects)
+                .WithMany(r => r.ClassSubjectAttendances)
+                .HasForeignKey(a => a.SubjectId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder
+                .HasOne<User>(a => a.Teacher)
+                .WithMany(r => r.ClassSubjectAttendances)
+                .HasForeignKey(a => a.TeacherId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

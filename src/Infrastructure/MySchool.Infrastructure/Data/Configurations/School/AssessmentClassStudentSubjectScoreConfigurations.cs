@@ -17,6 +17,20 @@ namespace MySchool.Infrastructure.Data.Configurations.School
             builder.ToTable("AssessmentClassStudentSubjectScore");
             builder.HasKey(x => x.Id);
 
+            builder.
+                HasOne<ClassStudentSubject>(a => a.ClassStudentSubject)
+                .WithMany(r => r.AssessmentClassStudentSubjectScores)
+                .HasForeignKey(f => f.ClassStudentSubjectId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder.
+                HasOne<Assessment>(a => a.Assessment)
+                .WithMany(r => r.AssessmentClassStudentSubjectScores)
+                .HasForeignKey(f => f.AssessmentId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
             builder
                 .HasOne<User>(a => a.CreatedByUser)
                 .WithMany(r => r.CreatedAssessmentClassStudentSubjectScores)

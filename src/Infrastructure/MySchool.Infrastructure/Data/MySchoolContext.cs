@@ -36,7 +36,6 @@ namespace MySchool.Infrastructure.Data
         public DbSet<GradeSubject> GradeSubjects => Set<GradeSubject>();
         public DbSet<StudentGuardian> StudentGuardians => Set<StudentGuardian>();
         public DbSet<Subject> Subjects => Set<Subject>();
-        public DbSet<SubjectMonitor> SubjectMonitors => Set<SubjectMonitor>();
         public DbSet<SubjectTeacher> SubjectTeachers => Set<SubjectTeacher>();
 
 

@@ -15,7 +15,7 @@ namespace MySchool.Domain.Entities
         public int TeacherAdjustedTargetScore { get; set; }
         public int ActualTargetScore { get; set; }
 
-        public virtual ClassStudentSubject ClassStudentSubjects { get; set; }
+        public virtual ClassStudentSubject ClassStudentSubject { get; set; }
         public virtual Assessment Assessment { get; set; }
 
     }
