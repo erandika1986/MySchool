@@ -27,22 +27,30 @@ namespace MySchool.Infrastructure.Repositories.Base
 
         public Task<bool> DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
 
         public Task<List<T>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Set<T>().FindAsync(id); //pass id here
+
+            return result;
         }
 
         public Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return entity;
         }
     }
 }
