@@ -31,6 +31,9 @@ namespace MySchool.Infrastructure.Data.Configurations.School
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(true);
 
+             builder.HasOne<Role>(s => s.Role)
+              .WithMany(x => x.UserRole)
+              .HasForeignKey(x => x.RoleId);  */
         }
     }
 }
