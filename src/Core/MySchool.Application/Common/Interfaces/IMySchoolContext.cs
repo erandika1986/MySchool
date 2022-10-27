@@ -31,7 +31,6 @@ namespace MySchool.Application.Common.Interfaces
         DbSet<GradeSubject> GradeSubjects { get; }
         DbSet<StudentGuardian> StudentGuardians { get; }
         DbSet<Subject> Subjects { get; }
-        DbSet<SubjectMonitor> SubjectMonitors { get; }
         DbSet<SubjectTeacher> SubjectTeachers { get; }
 
     }

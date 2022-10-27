@@ -15,6 +15,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<ClassName> builder)
         {
             builder.ToTable("ClassName");
+
             builder.HasKey(x => x.Id);
 
             builder

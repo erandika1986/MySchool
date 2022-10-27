@@ -15,8 +15,17 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<StudentGuardian> builder)
         {
             builder.ToTable("StudentGuardian");
-            builder.HasKey(x => x.Id);
 
+            builder
+                .HasOne<User>(a => a.Guardian)
+                .WithMany(r => r.Guardians)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+                 builder.HasOne<ClassStudent>(s => s.Student)
+                     .WithMany(x => x.StudentGuardian)
+                     .HasForeignKey(x => x.StudentId);   */
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)

@@ -15,7 +15,29 @@ namespace MySchool.Infrastructure.Data.Configurations.School
         public void Configure(EntityTypeBuilder<Class> builder)
         {
             builder.ToTable("Class");
+
             builder.HasKey(x => x.Id);
+
+            builder
+                .HasOne<AcademicYear>(a => a.AcademicYear)
+                .WithMany(r => r.Classes)
+                .HasForeignKey(f => f.AcademicYearId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder
+                .HasOne<Grade>(a => a.Grade)
+                .WithMany(r => r.Classes)
+                .HasForeignKey(f => f.GradeId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
+
+            builder
+                .HasOne<ClassName>(a => a.ClassName)
+                .WithMany(r => r.Classes)
+                .HasForeignKey(f => f.ClassNameId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(true);
 
             builder
                 .HasOne<User>(a => a.CreatedByUser)
@@ -26,7 +48,7 @@ namespace MySchool.Infrastructure.Data.Configurations.School
 
             builder
                 .HasOne<User>(a => a.UpdatedByUser)
-                .WithMany(r => r.UpdatedClasses)
+                .WithMany(r => r.UpdatedClasses) 
                 .HasForeignKey(a => a.UpdatedByUserId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
