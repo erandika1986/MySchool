@@ -1,4 +1,5 @@
-﻿using MySchool.Domain.Repositories.Base;
+﻿using Microsoft.EntityFrameworkCore;
+using MySchool.Domain.Repositories.Base;
 using MySchool.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -25,24 +26,32 @@ namespace MySchool.Infrastructure.Repositories.Base
             return entity;
         }
 
-        public Task<bool> DeleteAsync(T entity)
+        public async Task<bool> DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Set<T>().FindAsync(id); //pass id here
+
+            return result;
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return entity;
         }
     }
 }
