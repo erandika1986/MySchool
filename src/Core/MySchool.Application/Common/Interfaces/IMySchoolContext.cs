@@ -33,5 +33,11 @@ namespace MySchool.Application.Common.Interfaces
         DbSet<Subject> Subjects { get; }
         DbSet<SubjectTeacher> SubjectTeachers { get; }
 
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        Task BeginTransactionAsync(CancellationToken cancellationToken);
+        Task CommitTransactionAsync(CancellationToken cancellationToken);
+        Task RollbackTransactionAsync(CancellationToken cancellationToken);
+        Task RetryOnExceptionAsync(Func<Task> func);
+
     }
 }

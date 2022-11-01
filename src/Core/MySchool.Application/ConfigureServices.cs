@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using MySchool.Application.Common.Behaviours;
 using System;
 using System.Collections.Generic;
 using System.Linq;
